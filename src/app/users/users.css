@@ -89,7 +89,7 @@ td {
 }
 
 .postBtn:hover::after {
-  transform: translate(-50%, -50%) scale(10); 
+  transform: translate(-50%, -50%) scale(25); 
   opacity: 1;
 }
 
