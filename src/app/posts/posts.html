@@ -1,0 +1,22 @@
+<section>
+  <h1>Posts by Users</h1>
+
+  <div class="container">
+    <div class="post"
+    *ngFor="let post of filteredPosts; let i = index"
+    [style.animationDelay]="(i * 0.1) + 's'"
+    >
+      <h2><strong>{{ getUserName(post.userId) }}</strong></h2>
+      <h3>{{ post.title }}</h3>
+      <button (click)="openPost(post)">Details</button>
+    </div>
+  </div>
+
+  <div  class="overlay"  *ngIf="selectedPost" (click)="closePost()" >
+    <div class="userpost" (click)="$event.stopPropagation()">
+      <h4>{{ selectedPost.title }}</h4>
+      <p>{{ selectedPost.body }}</p>
+      <button class="close-btn" (click)="closePost()">X</button>
+    </div>
+  </div>
+</section>

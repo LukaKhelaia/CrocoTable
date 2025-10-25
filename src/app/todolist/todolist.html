@@ -1,0 +1,11 @@
+<section>
+  <h2>To-Do List for User</h2>
+
+  <ul>
+    <li *ngFor="let item of filteredTodos" 
+        [class.completed]="item.completed"
+        [class.not-completed]="!item.completed">
+      {{ item.title }}
+    </li>
+  </ul>
+</section>

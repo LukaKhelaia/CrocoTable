@@ -1,0 +1,57 @@
+<div class="actions-container">
+<section class="wheel-section">
+  <h2>დაატრიალე ბორბალი</h2>
+  <p>შეიყვანე ციფრი 1-10</p>
+  <p *ngIf="errorMessage" style="color: red; font-weight: bold;">{{ errorMessage }}</p>
+  
+  <div class="input-container">
+    <input type="number" [(ngModel)]="targetNumber" min="1" max="10" placeholder="Enter 1–10" />
+    <button (click)="spinWheel()">დაატრიალე</button>
+  </div>
+
+ <div class="wheel-container">
+  <div #wheel class="wheel" [style.transform]="rotation">
+    <div *ngFor="let num of numbers; let i = index"
+         class="sector"
+         [style.transform]="'rotate(' + (i * 36) + 'deg)'">
+      <span>{{ num }}</span>
+    </div>
+  </div>
+  <div class="pointer"></div>
+</div>
+
+</section>
+
+
+<section class="leaderboard-section">
+  <h2>ლიდერბორდი</h2>
+
+  <div class="filters">
+    <button [class.active]="selectedWeek === ''" (click)="selectWeek('')">All</button>
+    <button *ngFor="let week of weekTypes"
+            [class.active]="selectedWeek === week"
+            (click)="selectWeek(week)">
+      {{ week }}
+    </button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Place</th>
+        <th>Login Name</th>
+        <th>Customer ID</th>
+        <th>Week</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of filteredLeaderboard">
+        <td>{{ item.place }}</td>
+        <td>{{ item.loginName }}</td>
+        <td>{{ item.customerId }}</td>
+        <td>{{ item.week }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+</div>

@@ -1,0 +1,16 @@
+<!-- Burger menu -->
+<div class="burger" [class.hidden]="menuOpen" (click)="toggleMenu()">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+<!-- Sidebar Navigation -->
+<nav [class.open]="menuOpen">
+  <button routerLink="/users" routerLinkActive="active" (click)="closeMenu()">მომხმარებლები</button>
+  <button routerLink="/posts" routerLinkActive="active" (click)="closeMenu()">პოსტები</button>
+  <button routerLink="/actions" routerLinkActive="active" (click)="closeMenu()">აქციები</button>
+</nav>
+
+<!-- Overlay background-->
+<div class="overlay" *ngIf="menuOpen" (click)="closeMenu()"></div>

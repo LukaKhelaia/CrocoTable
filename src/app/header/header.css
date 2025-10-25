@@ -1,0 +1,28 @@
+header {
+    width: 100%;
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(0, 30, 40);
+}
+
+a {
+    cursor: pointer;
+}
+
+.logo {
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 24px;
+    color: rgb(28, 175, 75);
+}
+
+.datetime {
+    color: white;
+    margin-right: 20px;
+}
+
+
+
+
